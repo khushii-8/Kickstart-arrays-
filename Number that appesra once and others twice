@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int singleNumber(vector<int>& arr) {
+    int ans = 0;
+    for(int num : arr) {
+        ans ^= num;  // XOR all elements
+    }
+    return ans;
+}
+
+int main() {
+    vector<int> arr = {2, 3, 5, 4, 5, 3, 4};
+
+    cout << "The single number is: " << singleNumber(arr);
+    return 0;
+}
