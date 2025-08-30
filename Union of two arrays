@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> unionOfArrays(vector<int>& arr1, vector<int>& arr2) {
+    set<int> s;
+
+    for(int x : arr1) s.insert(x);
+    for(int x : arr2) s.insert(x);
+
+    // Convert set to vector
+    vector<int> result(s.begin(), s.end());
+    return result;
+}
+
+int main() {
+    vector<int> arr1 = {1, 2, 3, 4};
+    vector<int> arr2 = {3, 4, 5, 6};
+
+    vector<int> uni = unionOfArrays(arr1, arr2);
+
+    cout << "Union of arrays: ";
+    for(int x : uni) cout << x << " ";
+    return 0;
+}
