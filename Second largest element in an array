@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int secondLargest(vector<int>& arr) {
+    int n = arr.size();
+    if(n < 2) return -1; // not enough elements
+
+    int largest = INT_MIN, second = INT_MIN;
+
+    for(int i = 0; i < n; i++) {
+        if(arr[i] > largest) {
+            second = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > second && arr[i] != largest) {
+            second = arr[i];
+        }
+    }
+
+    return (second == INT_MIN) ? -1 : second; // if no second largest
+}
+
+int main() {
+    vector<int> arr = {12, 35, 1, 10, 34, 1};
+
+    int ans = secondLargest(arr);
+
+    if(ans == -1) cout << "No second largest element";
+    else cout << "Second largest element = " << ans;
+
+    return 0;
+}
