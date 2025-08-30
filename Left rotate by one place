@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void leftRotateByOne(vector<int>& arr) {
+    int n = arr.size();
+    int first = arr[0];  // store first element
+
+    for(int i = 0; i < n-1; i++) {
+        arr[i] = arr[i+1];  // shift elements left
+    }
+    arr[n-1] = first;  // put first at the end
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5};
+
+    leftRotateByOne(arr);
+
+    cout << "Array after left rotation: ";
+    for(int x : arr) cout << x << " ";
+    return 0;
+}
